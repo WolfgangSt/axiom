@@ -62,11 +62,11 @@ namespace Axiom.Graphics
 
             #region PhysicalIndex
 
-            /// <summary>
-			///    The target index.
-			/// </summary>
-            [OgreVersion(1, 7, 2790)]
-			public int PhysicalIndex;
+	        /// <summary>
+	        ///    The target index.
+	        /// </summary>
+	        [OgreVersion(1, 7, 2790)]
+	        public int PhysicalIndex;
 
             #endregion
 

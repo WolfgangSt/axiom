@@ -80,7 +80,7 @@ namespace Axiom.Graphics
             public void GenerateConstantDefinitionArrayEntries(String paramName, GpuConstantDefinition baseDef)
             {
                 // Copy definition for use with arrays
-                var arrayDef = baseDef;
+                var arrayDef = baseDef.Clone();
                 arrayDef.ArraySize = 1;
 
                 // Add parameters for array accessors
