@@ -43,6 +43,16 @@ namespace Axiom.Graphics
             public int BufferSize;
 
             #endregion
+
+            [AxiomHelper(0, 8)]
+            public GpuLogicalBufferStruct Clone()
+            {
+                var p = new GpuLogicalBufferStruct();
+                p.BufferSize = BufferSize;
+                foreach (var i in Map)
+                    p.Map.Add(i.Key, i.Value.Clone());
+                return p;
+            }
         };
     }
 }

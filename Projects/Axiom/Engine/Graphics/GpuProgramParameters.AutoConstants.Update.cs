@@ -463,6 +463,7 @@ namespace Axiom.Graphics
                     case AutoConstantType.LightCount:
                         WriteRawConstant( entry.PhysicalIndex, source.LightCount );
                         break;
+                         */
                     case AutoConstantType.LightDiffuseColor:
                         WriteRawConstant( entry.PhysicalIndex, source.GetLightDiffuseColor( entry.Data ),
                                           entry.ElementCount );
@@ -477,18 +478,20 @@ namespace Axiom.Graphics
                         WriteRawConstant( entry.PhysicalIndex,
                                           source.GetLightAs4DVector( entry.Data ), entry.ElementCount );
                         break;
+                        /*
                     case AutoConstantType.LightDirection:
-                        vec3 = source->getLightDirection( entry.Data );
+                        vec3 = source.GetLightDirection( entry.Data );
                         // Set as 4D vector for compatibility
                         // Use element count in case uniform slot is smaller
-                        WriteRawConstant( entry.PhysicalIndex, Vector4( vec3.x, vec3.y, vec3.z, 1.0f ),
+                        WriteRawConstant( entry.PhysicalIndex, new Vector4( vec3.x, vec3.y, vec3.z, 1.0f ),
                                           entry.ElementCount );
-                        break;
+                        break;*/
                     case AutoConstantType.LightPositionViewSpace:
                         WriteRawConstant( entry.PhysicalIndex,
                                           source.ViewMatrix.TransformAffine(
                                               source.GetLightAs4DVector( entry.Data ) ), entry.ElementCount );
                         break;
+                        /*
                     case AutoConstantType.LightDirectionViewSpace:
                         source.InverseTransposeViewMatrix.Extract3x3Matrix( m3 );
                         // inverse transpose in case of scaling

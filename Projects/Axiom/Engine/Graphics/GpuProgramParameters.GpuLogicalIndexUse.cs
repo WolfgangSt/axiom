@@ -59,6 +59,16 @@ namespace Axiom.Graphics
             }
 
             #endregion
+
+            [AxiomHelper(0, 8)]
+            public GpuLogicalIndexUse Clone()
+            {
+                var p = new GpuLogicalIndexUse();
+                p.PhysicalIndex = PhysicalIndex;
+                p.CurrentSize = CurrentSize;
+                p.Variability = Variability;
+                return p;
+            }
         }
 
         [OgreVersion(1, 7, 2790)]

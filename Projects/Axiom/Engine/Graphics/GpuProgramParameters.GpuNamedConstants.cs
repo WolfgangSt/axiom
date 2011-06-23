@@ -135,6 +135,17 @@ namespace Axiom.Graphics
             }
 
             #endregion
+
+            public GpuNamedConstants Clone()
+            {
+                var p = new GpuNamedConstants();
+                p.FloatBufferSize = FloatBufferSize;
+                p.IntBufferSize = IntBufferSize;
+                foreach (var i in Map)
+                    p.Map.Add( i.Key, i.Value );
+
+                return p;
+            }
         }
     }
 }
