@@ -114,7 +114,7 @@ namespace Axiom.Graphics
             public int Count 
             { 
                 get;
-                private set;
+                protected set;
             }
 
             public bool IsReadOnly
@@ -191,6 +191,7 @@ namespace Axiom.Graphics
             public FloatConstantList(FloatConstantList other)
             {
                 Data = (float[])other.Data.Clone();
+                Count = other.Count;
             }
         }
 
@@ -214,6 +215,7 @@ namespace Axiom.Graphics
             public IntConstantList(IntConstantList other)
             {
                 Data = (int[])other.Data.Clone();
+                Count = other.Count;
             }
         }
     }
